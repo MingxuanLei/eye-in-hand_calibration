@@ -4,7 +4,6 @@ import numpy as np
 import pandas as pd
 import cv2
 
-
 # ============================================================
 # 路径设置
 # ============================================================
@@ -14,7 +13,6 @@ JSON_DIR = "calibration_data"
 
 OUTPUT_GRIPPER_CAMERA = "T_gripper_camera.txt"
 OUTPUT_CAMERA_GRIPPER = "T_camera_gripper.txt"
-
 
 # ============================================================
 # 基础矩阵函数
@@ -32,7 +30,6 @@ def make_T(R, t):
     T[:3, 3] = np.asarray(t, dtype=np.float64).reshape(3)
     return T
 
-
 def invert_T(T):
     """
     求 4x4 齐次变换矩阵的逆
@@ -45,7 +42,6 @@ def invert_T(T):
     T_inv[:3, 3] = -R.T @ t
 
     return T_inv
-
 
 # ============================================================
 # 机械臂 CSV 位姿读取
